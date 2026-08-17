@@ -7,8 +7,8 @@ An advanced, feature-rich custom Bluetooth game controller powered by an **ESP32
 ## 🚀 Key Features
 
 * **Bluetooth LE Gamepad:** Connects wirelessly to PCs, phones, and tablets as a standard gamepad.
-* **Web Configuration Dashboard:** Connect to the controller's Wi-Fi Access Point to customize button mappings, key record inputs, analog joystick axes, and presets right from your browser.
-* **Dual Preset System (`PC` & `Phone`):** Switch seamlessly between PC and Phone configurations on the fly using key combinations (`Fn + B1`).
+* **Web Configuration Dashboard:** Connect to the controller's Wi-Fi Access Point to customize button mappings, presets, and router credentials right from your browser.
+* **Multi-Preset System:** Switch between custom configuration profiles on the fly using key combinations (`Fn + B1`).
 * **Test Mode:** Quick-press the Fn button to view live digital and analog input diagnostics directly on the OLED screen.
 * **Automated GitHub OTA Updates:** Pull and install new firmware versions directly over Wi-Fi using GitHub Releases.
 
@@ -34,22 +34,36 @@ An advanced, feature-rich custom Bluetooth game controller powered by an **ESP32
 
 ---
 
-## 🌐 Web Dashboard Setup & Key Recording
+## 🌐 Web Dashboard Setup
 
 1. Power on your controller. Connect your phone or computer to the Wi-Fi network named **`FoController`** (Password: `FoController V1`).
 2. Open a web browser and go to `http://192.168.4.1`.
-3. **Key Recording:** Click the **"Record"** button next to any mapping field, then press any key on your keyboard (e.g., Up Arrow) to automatically capture its key code.
-4. **Joystick Configuration:** Toggle **Swap X & Y Axes**, **Invert X Axis**, or **Invert Y Axis** directly from the dashboard depending on whether you are using the `PC` or `Phone` preset.
-5. Click **Save Changes**.
+3. Configure your home router Wi-Fi credentials under the **Router Wi-Fi Settings** card so the controller can fetch updates.
+4. Customize your button bindings and preset colors, then click **Save Changes**.
 
 ---
 
-## 🔄 OTA Firmware Updates
+## 🔄 OTA Firmware Updates (v1.0)
 
 To check for updates from GitHub:
-1. Ensure your hotspot is active (`your_hotspot_name` / `your_password_name`).
+1. Ensure your hotspot is active (`your_hotspot/wifi_name` / `your_password_name`).
 2. Press and **hold all 4 main buttons (`Button 1 + Button 2 + Button 3 + Button 4`) together for 2 seconds**.
 3. Once an update is found, the OLED screen will display **"Do you want to update?"**:
    * Press **`Fn + Button 2`** to confirm and download the update.
    * Press **`Fn + Button 1`** to cancel.
 4. If `version.txt` is missing from GitHub, the firmware safely defaults to version **`1.0`**.
+
+---
+
+## ⚠️ Wi-Fi & Network Requirements
+
+The **ESP32 microcontroller** only supports **2.4 GHz Wi-Fi networks**. If your phone hotspot restricts band customization or throws connection errors, use a PC hotspot fallback:
+
+### 1. Alternative: Windows PC Hotspot (Recommended)
+* Press **Win + I** to open Settings > **Network & internet** > **Mobile hotspot**.
+* Click **Properties/Edit** and change the network band strictly to **2.4 GHz**.
+* Set the hotspot name and password to match your code (`your_hotspot/wifi_name` / `your_password_name`), then turn it on.
+
+### 2. Phone Hotspots
+* **Android:** Navigate to hotspot settings, look for **AP Band**, and select **2.4 GHz**.
+* **iPhone:** Go to **Settings > Personal Hotspot** and toggle **"Maximize Compatibility"**.
