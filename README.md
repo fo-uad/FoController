@@ -18,10 +18,12 @@ An advanced, feature-rich custom Bluetooth game controller powered by an **ESP32
 
 | Component | ESP32 Pin | Description |
 | :--- | :--- | :--- |
+| **3.3V Power Rail** | **3V3 Pin** | Power rail for OLED VCC, Joystick VCC, RGB LED (Common Anode, if applicable) |
+| **Ground Rail** | **GND Pin** | Common ground for Buttons, Joystick GND, RGB LED Cathode, and OLED GND |
 | **Button 1 (B1)** | Pin 27 | Primary Action / Chord Modifier |
 | **Button 2 (B2)** | Pin 12 | Secondary Action |
 | **Button 3 (B3)** | Pin 14 | Tertiary Action |
-| **Button 4 (B4)** | Pin 4 | Quaternary Action |
+| **Button 4 (B4)** | Pin 13 | Quaternary Action |
 | **Fn Button** | Pin 18 | Function Key / Test Mode Toggle |
 | **Joystick VRX** | Pin 34 | Analog X-Axis |
 | **Joystick VRY** | Pin 35 | Analog Y-Axis |
