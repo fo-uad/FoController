@@ -64,7 +64,7 @@ The **ESP32 microcontroller** only supports **2.4 GHz Wi-Fi networks**. If your 
 ### 1. Alternative: Windows PC Hotspot (Recommended)
 * Press **Win + I** to open Settings > **Network & internet** > **Mobile hotspot**.
 * Click **Properties/Edit** and change the network band strictly to **2.4 GHz**.
-* Set the hotspot name and password to match your code (`your_hotspot/wifi_name` / `your_password_name`), then turn it on.
+* Set the hotspot name and password to match your code (`your_hotspot/wifi_name` / `your_password`), then turn it on.
 
 ### 2. Phone Hotspots
 * **Android:** Navigate to hotspot settings, look for **AP Band**, and select **2.4 GHz**.
